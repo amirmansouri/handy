@@ -5,7 +5,7 @@
         <div class="card-header">user Page</div>
         <div class="card-body">
 
-            <form action="{{ url('user/' .$user->id) }}" method="post">
+            <form action="{{ url('user/liste/' .$user->id) }}" method="post">
                 {!! csrf_field() !!}
                 @method("PATCH")
                 <input type="hidden" name="id" id="id" value="{{$user->id}}" id="id" />

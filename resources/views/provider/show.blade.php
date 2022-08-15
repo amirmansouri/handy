@@ -1,19 +1,18 @@
-@extends('service.layout')
+@extends('provider.layout')
 @section('content')
 
 
-<div class="card">
-  <div class="card-header">Services Page</div>
-  <div class="card-body">
-
-
+    <div class="card">
+        <div class="card-header">provider Page</div>
         <div class="card-body">
-        <p class="card-title">Name : {{ $provider->name }}</p>
-        <p class="card-text">email : {{ $provider->email }}</p>
 
-  </div>
 
-    </hr>
+            <div class="card-body">
+                <h5 class="card-title">Name : {{ $provider->name?? null }}</h5>
+                <h5 class="card-text">Address : {{ $provider->address ?? null }}</h5>
 
-  </div>
-</div>
+            </div>
+
+
+        </div>
+    </div>

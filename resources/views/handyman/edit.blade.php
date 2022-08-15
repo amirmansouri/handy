@@ -2,10 +2,10 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header">user Page</div>
+        <div class="card-header">handyman Page</div>
         <div class="card-body">
 
-            <form action="{{ url('handyman/' .$handyman->id) }}" method="post">
+            <form action="{{ url('handyman/liste/' .$handyman->id) }}" method="post">
                 {!! csrf_field() !!}
                 @method("PATCH")
                 <input type="hidden" name="id" id="id" value="{{$handyman->id}}" id="id" />

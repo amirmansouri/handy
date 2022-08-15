@@ -91,7 +91,7 @@
         <div id="collapseprovider" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">gestion services:</h6>
-                <a class="collapse-item" href="provider">liste providers</a>
+                <a class="collapse-item" href="provider/liste">liste providers</a>
                 <a class="collapse-item" href="provider/create">ajouter provider</a>
             </div>
         </div>
@@ -113,8 +113,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Handyman :</h6>
-                <a class="collapse-item" href="handyman">Liste Handyman</a>
-                <a class="collapse-item" href="utilities-border.html">ajouter handyman</a>
+                <a class="collapse-item" href="handyman/liste">Liste Handyman</a>
+                <a class="collapse-item" href="handyman/create">ajouter handyman</a>
 
             </div>
         </div>
@@ -140,8 +140,8 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="user">liste user</a>
-                <a class="collapse-item" href="user-register">ajouter user</a>>
+                <a class="collapse-item" href="user/liste">liste user</a>
+                <a class="collapse-item" href="user/create">ajouter user</a>>
             </div>
         </div>
     </li>

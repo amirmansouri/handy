@@ -44,7 +44,7 @@ class user_simpleController extends Controller
         ]);
 
 
-        return redirect('provider')->with('flash_message', 'Provider Addedd!');
+        return redirect('user')->with('flash_message', 'Provider Addedd!');
 
     }
 
@@ -52,14 +52,14 @@ class user_simpleController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('user.show')->with('provider', $user);
+        return view('user.show')->with('user', $user);
     }
 
 
     public function edit($id)
     {
         $user = User::find($id);
-        return view('user.edit')->with('provider', $user);
+        return view('user.edit')->with('user', $user);
     }
 
 
