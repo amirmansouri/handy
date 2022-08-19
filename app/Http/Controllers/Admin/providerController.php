@@ -9,15 +9,15 @@ use App\Models\SubCategory;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class providerController extends Controller
 {
     public function index()
     {
         $subcategory = SubCategory::count();
-       $service = Service::count();
-$provider = User::where('role_as','provider')->count();
+        $service = Service::count();
+        $provider = User::where('role_as','provider')->count();
 
-        return view('admin.dashboard',compact('subcategory','service','provider'));
+        return view('admin.provider',compact('subcategory','service','provider'));
 //         return view('admin.dashboard');
     }
 }

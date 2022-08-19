@@ -18,6 +18,10 @@ class CreateServiceTable extends Migration
             $table->timestamps();
              $table->string('name');
              $table->string('address');
+
+
+
+
         });
     }
 

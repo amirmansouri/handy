@@ -1,4 +1,4 @@
-@extends('provider.layout')
+@extends('layouts.master')
 @section('content')
     <div class="container">
         <div class="row">
@@ -24,7 +24,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($provider as $item)
+
+                                @foreach($provider_affiche as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->name }}</td>
@@ -44,6 +45,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
+
                                 </tbody>
                             </table>
                         </div>

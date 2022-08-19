@@ -12,7 +12,8 @@ class ProviderController extends Controller
     public function index()
     {
         $provider = User::all();
-      return view ('provider.index')->with('provider', $provider);
+        $provider_affiche=User::where('role_as','provider')->get();
+      return view ('provider.index',compact('provider_affiche'))->with('provider', $provider);
     }
 
 

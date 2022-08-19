@@ -1,4 +1,4 @@
-@extends('user.layout')
+@extends('layouts.master')
 @section('content')
     <div class="container">
         <div class="row">
@@ -24,7 +24,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($user as $item)
+                                @foreach( $user_affiche as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->name }}</td>

@@ -1,4 +1,5 @@
-@extends('handyman.layout')
+@extends('layouts.master')
+
 @section('content')
     <div class="container">
         <div class="row">
@@ -24,7 +25,9 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($handyman as $item)
+
+                                @foreach($handyman_affiche as $item)
+
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->name }}</td>
@@ -43,7 +46,9 @@
                                             </form>
                                         </td>
                                     </tr>
+
                                 @endforeach
+
                                 </tbody>
                             </table>
                         </div>

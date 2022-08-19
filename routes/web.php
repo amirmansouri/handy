@@ -58,18 +58,18 @@ Route::group(['middleware'=>['auth','isUser']],function (){
 });
 
 Route::group(['middleware'=>['auth','isProvider']],function (){
-    Route::get('/provider', function () {
-        return view('welcome');
+//    Route::get('/provider', function () {
+//        return view('admin.provider');
+    Route::get("/provider",[App\Http\Controllers\Admin\providerController::class,'index']);
+
     });
 
-});
+
 Route::group(['middleware'=>['auth','isHandyman']],function (){
     Route::get('/handyman', function () {
         return view('home');
     });
 
 });
-
-
-
-
+Route::get("/dashboard",[App\Http\Controllers\Admin\DashboardController::class,'index']);
+Route::get("/home",[App\Http\Controllers\HomeController::class,'index']);

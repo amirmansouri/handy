@@ -1,4 +1,4 @@
-@extends('user.layout')
+@extends('layouts.master')
 @section('content')
 
 
@@ -12,7 +12,6 @@
                 <p class="card-text">Address : {{ $user->address }}</p>
 
             </div>
-
 
         </div>
     </div>
