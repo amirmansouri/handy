@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserMiddleware
+class BanMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,14 +17,17 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if (Auth::user()->role_as == 'user') {
-            return $next($request);
-        } else {
-            return redirect('/home')->with('status', 'yuo are not allowxed to access');
+        if (Auth::User()->isban)
+        {
+            $banned = Auth::user()->isban =="1";
+            Auth::logout();
+            if($banned==1){
+                $message = ' votre compte est bloquer ,contacter l Admin ';
+            }
+            return redirect()->route('login')
+                ->with('status',$message)
+                ->withErrors(['email'=>'votre compte est bloquer ,contacter l Admin']);
         }
-
+        return $next($request);
     }
-
-
 }

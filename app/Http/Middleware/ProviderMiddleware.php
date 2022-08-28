@@ -22,5 +22,7 @@ class ProviderMiddleware
         } else {
             return redirect('/home')->with('status', 'yuo are not allowxed to access');
         }
+
     }
+
 }

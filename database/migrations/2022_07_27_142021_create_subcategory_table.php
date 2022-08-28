@@ -18,7 +18,12 @@ class CreateSubcategoryTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('address');
-             
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('provider_id')->nullable();
+
+            $table->foreign('category_id')->references('id')->on('category');
+            $table->foreign('provider_id')->references('id')->on('users');
+
         });
     }
 

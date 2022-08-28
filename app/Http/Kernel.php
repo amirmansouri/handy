@@ -68,6 +68,9 @@ class Kernel extends HttpKernel
         "isUser"=>\App\Http\Middleware\UserMiddleware::class,
         "isHandyman"=>\App\Http\Middleware\HandymanMiddleware::class,
         "isProvider"=>\App\Http\Middleware\ProviderMiddleware::class,
+        "isBan"=>\App\Http\Middleware\BanMiddleware::class,
+
+
 
 
 

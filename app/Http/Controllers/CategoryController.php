@@ -11,48 +11,48 @@ class CategoryController extends Controller
             $category = Category::all();
           return view ('category.index')->with('category', $category);
         }
-    
-        
+
+
         public function create()
         {
             return view('category.create');
         }
-    
-       
+
+
         public function store(Request $request)
         {
             $input = $request->all();
             Category::create($input);
-            return redirect('category')->with('flash_message', 'Category Addedd!');  
+            return redirect('category-liste')->with('flash_message', 'Category Addedd!');
         }
-    
-        
+
+
         public function show($id)
         {
             $category = Category::find($id);
             return view('category.show')->with('category', $category);
         }
-    
-        
+
+
         public function edit($id)
         {
             $category = Category::find($id);
             return view('category.edit')->with('category', $category);
         }
-    
-      
+
+
         public function update(Request $request, $id)
         {
             $category = Category::find($id);
             $input = $request->all();
             $category->update($input);
-            return redirect('category')->with('flash_message', 'Category Updated!');  
+            return redirect('category')->with('flash_message', 'Category Updated!');
         }
-    
-       
+
+
         public function destroy($id)
         {
             Category::destroy($id);
-            return redirect('category')->with('flash_message', 'Category deleted!');  
+            return redirect('category')->with('flash_message', 'Category deleted!');
         }
 }

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\BanMiddleware;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Error;
 
 class LoginController extends Controller
 {
@@ -27,29 +30,33 @@ class LoginController extends Controller
      *
      * @var string
      */
-  // protected $redirectTo = RouteServiceProvider::HOME;
-    public function redirectTo(){
-        if(Auth::user()->role_as == 'admin')
-        {
-            return 'dashboard';
-        }
-        if(Auth::user()->role_as == 'user'){
-            return 'user';
-
-        }
-        if(Auth::user()->role_as == 'provider'){
-            return 'provider';
-
-        }
-        if(Auth::user()->role_as == 'handyman'){
-            return 'handyman';
-
-        }
-        else
-        {
-            return 'welcome';
-        }
-    }
+    // protected $redirectTo = RouteServiceProvider::HOME;
+//    public function redirectTo()
+//    {
+//
+//
+//        if (Auth::user()->role_as == 'admin') {
+//            return 'dashboard';
+//        }
+//        if (Auth::user()->role_as == 'provider') {
+//            return 'provider';
+//        }
+//
+//        if (Auth::user()->role_as == 'user') {
+//            return 'user';
+//
+//        }
+//        if (Auth::user()->role_as == 'provider') {
+//            return 'provider';
+//
+//        }
+//        if (Auth::user()->role_as == 'handyman') {
+//            return 'handyman';
+//
+//        } else {
+//            return 'welcome';
+//        }
+//    }
 
     /**
      * Create a new controller instance.

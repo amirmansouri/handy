@@ -9,8 +9,9 @@ use function Livewire\str;
 
 class ProviderController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+
         $provider = User::all();
         $provider_affiche=User::where('role_as','provider')->get();
       return view ('provider.index',compact('provider_affiche'))->with('provider', $provider);
@@ -47,7 +48,8 @@ class ProviderController extends Controller
         ]);
 
 
-        return redirect('provider')->with('flash_message', 'Provider Addedd!');
+
+        return redirect('provider-liste')->with('flash_message', 'Provider Addedd!');
 
     }
 
@@ -62,6 +64,8 @@ class ProviderController extends Controller
     public function edit($id)
     {
         $provider = User::find($id);
+
+
         return view('provider.edit')->with('provider', $provider);
     }
 
@@ -70,13 +74,15 @@ class ProviderController extends Controller
     {
         $provider = User::find($id);
         $input = $request->all();
+        $provider->isban = $request->input('isban');
         $provider->update($input);
-        return redirect('provider')->with('flash_message', 'Provider Updated!');
+
+     return redirect('provider-liste')->with('flash_message', 'Provider Updated!');
     }
 
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('provider')->with('flash_message', 'Provider deleted!');
+        return redirect('provider-liste')->with('flash_message', 'Provider deleted!');
     }
 }

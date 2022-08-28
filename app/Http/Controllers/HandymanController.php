@@ -37,7 +37,7 @@ class HandymanController extends Controller
         ]);
 
 
-        return redirect('handyman')->with('flash_message', '$handyman ajouter!');
+        return redirect('handyman-liste')->with('flash_message', '$handyman ajouter!');
 
     }
 
@@ -61,12 +61,12 @@ class HandymanController extends Controller
         $handyman = User::find($id);
         $input = $request->all();
         $handyman->update($input);
-        return redirect('handyman')->with('flash_message', 'handyman Updated!');
+        return redirect('handyman-liste')->with('flash_message', 'handyman Updated!');
     }
 
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('handyman')->with('flash_message', 'handyman deleted!');
+        return redirect('handyman-liste')->with('flash_message', 'handyman deleted!');
     }
 }

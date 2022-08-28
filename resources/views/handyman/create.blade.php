@@ -6,7 +6,7 @@
         <div class="card-header">handyman Page</div>
         <div class="card-body">
 
-            <form action="{{ url('handyman/liste') }}" method="post">
+            <form action="{{ url('handyman-liste') }}" method="post">
                 {!! csrf_field() !!}
                 <label>Name</label></br>
                 <input type="text" name="name" id="name" class="form-control"></br>

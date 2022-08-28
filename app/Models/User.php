@@ -19,10 +19,21 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lastname',
         'email',
+        'number',
         'password',
         'role_as',
-        'provider_id'
+        'isban',
+        'provider_id',
+        'adresse1',
+        'adresse2',
+        'country',
+        'state',
+        'city',
+        'code_zip',
+
+
     ];
 
     /**
@@ -44,4 +55,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function profile(){
+        return $this->hasOne(profile::class,'user_id');
+
+    }
 }

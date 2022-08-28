@@ -13,17 +13,17 @@ class AdminMiddleware
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @return string
      */
     public function handle(Request $request, Closure $next)
     {
         if(Auth::user()->role_as=='admin')
         {
-              return $next($request);
+              return BanMiddleware::class;
         }
         else
         {
-            return redirect('/home')->with('status','yuo are not allowxed to access');
+            return redirect('/login')->with('status','yuo are not allowxed to access');
         }
 
     }

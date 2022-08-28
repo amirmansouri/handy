@@ -1,11 +1,11 @@
-@extends('service.layout')
+@extends('layouts.master')
 @section('content')
 
     <div class="card">
         <div class="card-header">subcategory Page</div>
         <div class="card-body">
 
-            <form action="{{ url('service/' .$service->id) }}" method="post">
+            <form action="{{ url('service-liste/' .$service->id) }}" method="post">
                 {!! csrf_field() !!}
                 @method("PATCH")
                 <input type="hidden" name="id" id="id" value="{{$service->id}}" id="id" />

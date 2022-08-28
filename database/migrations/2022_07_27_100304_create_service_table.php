@@ -14,10 +14,19 @@ class CreateServiceTable extends Migration
     public function up()
     {
         Schema::create('service', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+
+            $table->string('name');
+            $table->unsignedBigInteger('provider_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->string('address');
             $table->timestamps();
-             $table->string('name');
-             $table->string('address');
+
+
+
+
+
+         //   $table->foreign('category_id')->references('id')->on('category');
 
 
 

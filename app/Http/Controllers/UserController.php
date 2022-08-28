@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -67,5 +67,25 @@ class UserController extends Controller
             ])->save();
 
             return response()->json(['message'=>'success' ]);
+        }
+        public function profile_update(Request $request)
+        {
+        $user_id = Auth::user()->id;
+        $user = User::findOrFail($user_id);
+            $user->lastname = $request->input('lastname');
+       $user->lastname = $request->input('lastname');
+            $user->code_zip = $request->input('code_zip');
+            $user->number = $request->input('number');
+            $user->adresse1 = $request->input('adresse1');
+            $user->adresse2 = $request->input('adresse2');
+            $user->country = $request->input('country');
+            $user->state = $request->input('state');
+            $user->city = $request->input('city');
+
+       $user->update();
+            return view('livewire.user.user-profile-component')->with('user', $user);
+
+
+
         }
 }

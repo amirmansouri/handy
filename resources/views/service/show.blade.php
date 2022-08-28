@@ -1,4 +1,4 @@
-@extends('service.layout')
+@extends('layouts.master')
 @section('content')
 
 
