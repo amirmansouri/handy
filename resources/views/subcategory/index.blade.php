@@ -12,20 +12,36 @@
                         </a>
                         <br/>
                         <br/>
+                        <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
+
+                        <div class="input-group">
+                            <div class="form-outline">
+                                <input type="search" name="query"id="form1" class="form-control" />
+                                <label class="form-label" for="form1">Search</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        </form>
+
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Name</th>
+                                        <th>category</th>
+                                        <th>nom de service</th>
                                         <th>Address</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($subcategory as $item)
+
+                                @foreach($subcategory  as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>{{$item->category->name}}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->address }}</td>
 
@@ -41,7 +57,9 @@
                                             </form>
                                         </td>
                                     </tr>
+
                                 @endforeach
+
                                 </tbody>
                             </table>
                         </div>

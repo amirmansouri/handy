@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
@@ -9,13 +10,15 @@ class SubCategoryController extends Controller
     public function index()
         {
             $subcategory = SubCategory::all();
-          return view ('subcategory.index')->with('subcategory', $subcategory);
+            return view ('subcategory.index')->with('subcategory', $subcategory);
+
         }
 
 
         public function create()
         {
-            return view('subcategory.create');
+            $category=Category::all();
+            return view('subcategory.create')->with('category',$category);
         }
 
 
@@ -54,5 +57,10 @@ class SubCategoryController extends Controller
         {
             SubCategory::destroy($id);
             return redirect('subcategory')->with('flash_message', 'SubCategory deleted!');
+        }
+        public function search(){
+$search_text = $_GET['query'];
+$subcategory = subcategory::where('name','LIKE','%'.$search_text.'%')->with('category')->get();
+return view('subcategory.index',compact('subcategory'));
         }
 }

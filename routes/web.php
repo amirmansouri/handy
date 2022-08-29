@@ -33,6 +33,9 @@ Route::get('subcategory-create', 'App\Http\Controllers\SubCategoryController@cre
 Route::get('category-create', 'App\Http\Controllers\CategoryController@create');
 Route::get('service-create', 'App\Http\Controllers\ServiceController@create');
 
+Route::get('/search', 'App\Http\Controllers\SubCategoryController@search');
+
+
 
 Route::get('user-profile', \App\Http\Livewire\User\UserProfileComponent::class);
 
